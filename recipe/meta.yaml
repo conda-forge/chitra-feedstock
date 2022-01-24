@@ -11,7 +11,7 @@ source:
   sha256: f38cb1f528c629c458b5eba5311e0fa17b4160cae06b9859a6c645ff19c3f933
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - chitra = chitra.cli.main:app
@@ -67,3 +67,5 @@ about:
 extra:
   recipe-maintainers:
     - sugatoray
+    # Maintainer(s) from Package Repo
+    - aniketmaurya
