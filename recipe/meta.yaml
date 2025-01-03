@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/chitra-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/chitra-{{ version }}.tar.gz
   sha256: f38cb1f528c629c458b5eba5311e0fa17b4160cae06b9859a6c645ff19c3f933
 
 build:
-  number: 1
+  number: 2
   noarch: python
   entry_points:
     - chitra = chitra.cli.main:app
@@ -20,10 +20,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - flit-core >=2,<4
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - imgaug >=0.4.0
     - matplotlib-base
     - pillow
@@ -39,6 +39,7 @@ test:
     - chitra --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/aniketmaurya/chitra
